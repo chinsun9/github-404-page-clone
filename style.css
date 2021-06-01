@@ -1,0 +1,30 @@
+:root {
+  --bg: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+#app {
+  min-height: 100vh;
+  min-width: 360px;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  background-color: var(--bg);
+}
+
+.main {
+  background-color: rgb(240, 255, 233);
+}
+
+.footer {
+  background-color: var(--bg);
+}
