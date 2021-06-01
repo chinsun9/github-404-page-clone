@@ -1,11 +1,40 @@
 :root {
-  --bg: black;
+  --bg: #161b22;
+  --bg-canvas: #0d1117;
+  --header-logo: #f0f6fc;
+  --header-logo-hover: #f0f6fcb3;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --input-bg: var(--bg-canvas);
+  --input-border: #21262d;
+  --input-border-focus: #388bfd;
+  --input-shadow-focus: #0c2d6b;
+  --btn-border: #30363d;
+  --btn-outline-text: #f0f6fc;
+  --btn-outline-border: rgba(240, 246, 252, 0.3);
+  --btn-outline-hover-border: rgba(240, 246, 252, 0.5);
+  --text-link: #58a6ff;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--text-link);
 }
 
 #app {
@@ -17,14 +46,190 @@
   grid-template-rows: auto 1fr auto;
 }
 
+/* header */
+
 .header {
   background-color: var(--bg);
+  height: 64px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
 }
+
+.header a {
+  color: var(--header-logo);
+}
+
+.header a:hover {
+  color: var(--header-logo-hover);
+}
+
+/* main */
 
 .main {
   background-color: rgb(240, 255, 233);
 }
 
+/* footer */
+
 .footer {
-  background-color: var(--bg);
+  background-color: var(--bg-canvas);
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.footer .search-box {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 1012px;
+}
+
+.footer .search-box p {
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+}
+
+.footer .search-box .search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.footer .search-box .search input {
+  padding: 5px 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  outline: none;
+}
+
+.footer .search-box .search input:focus {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px var(--input-shadow-focus);
+}
+
+.footer .search-box .search button {
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  background-color: var(--input-border);
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: var(--btn-border);
+}
+
+.footer .hr {
+  color: var(--text-secondary);
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.footer .hr span {
+  color: inherit;
+  font-size: x-small;
+}
+
+.footer .more {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1012px;
+  margin-bottom: 32px;
+}
+
+.footer .more .newsletter {
+  flex: 0 1 330px;
+  margin: 5px;
+  margin-bottom: 32px;
+}
+
+.footer .more .newsletter h1 {
+  color: #24292ede;
+  font-size: 28px;
+}
+
+.footer .more .newsletter .desc {
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.footer .more .newsletter .desc strong {
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.footer .more .newsletter .desc p {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.footer .more .newsletter .desc button {
+  margin-bottom: 24px;
+  padding: 0.9rem 1.5rem 1.1rem;
+  background: none;
+  color: var(--btn-outline-text);
+  box-shadow: 0 0 0 1px var(--btn-outline-border);
+  line-height: 1;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: 0;
+  font-size: 1rem;
+}
+.footer .more .newsletter .desc button:hover {
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 2px var(--btn-outline-hover-border);
+}
+
+.footer .more .col-group {
+  flex: 0 1 630px;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+}
+
+.footer .more .col-group .col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 16px;
+  margin: 5px 0 40px 0;
+}
+
+.footer .more .col-group .col .item {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.footer .links {
+  width: 100%;
+  max-width: 1012px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.footer .links .left {
+  color: var(--text-secondary);
+  font-size: 12px;
+  display: flex;
+  gap: 16px;
+}
+
+.footer .links .left span {
+  color: inherit;
+}
+
+.footer .links .right {
+  display: flex;
+  gap: 16px;
 }
