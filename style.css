@@ -54,6 +54,7 @@ a:hover {
   padding: 16px 24px;
   display: flex;
   align-items: center;
+  z-index: 20;
 }
 
 .header a {
@@ -67,7 +68,67 @@ a:hover {
 /* main */
 
 .main {
+  position: relative;
   background-color: rgb(240, 255, 233);
+}
+
+.main .bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.main .bg img {
+  z-index: 1;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  transform: translate3d();
+}
+
+.main .obj {
+  height: 370px;
+  position: relative;
+  margin: auto;
+  max-width: 1012px;
+}
+
+.main .obj img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main .obj .notfound {
+  z-index: 10;
+  top: 72px;
+  left: 72px;
+}
+
+.main .obj .a {
+  z-index: 9;
+  top: 94px;
+  left: 356px;
+}
+
+.main .obj .m {
+  z-index: 8;
+  top: 150px;
+  left: 432px;
+}
+
+.main .obj .h1 {
+  z-index: 7;
+  top: 73px;
+  left: 467px;
+}
+
+.main .obj .h2 {
+  z-index: 6;
+  top: 113px;
+  left: 762px;
 }
 
 /* footer */
@@ -78,6 +139,7 @@ a:hover {
   flex-direction: column;
   padding: 0 16px;
   align-items: center;
+  z-index: 20;
 }
 
 .footer .search-box {
